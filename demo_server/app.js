@@ -1,5 +1,6 @@
 const express = require('express')
 const dBModule = require('./dBModule')
+const { createPerson } = require('./Personmodel')
 const app = express()
 const port = 3000
 
@@ -21,12 +22,8 @@ app.get('/jesus', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-
-  dBModule.storePerson(req.body.name, req.body.email, req.body.age)
-  res.redirect('/')
-})
-app.post('/', (req, res) => {
-  dBModule.storeProduct(req.body.name, req.body.type, req.body.number)
+  let person = createPerson(req.body.name, req.body.email, req.body.age)
+  dBModule.storeElement(person)
   res.redirect('/')
 })
 
