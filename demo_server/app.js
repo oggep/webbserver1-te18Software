@@ -25,6 +25,11 @@ app.post('/', (req, res) => {
 
   res.redirect('/')
 })
+app.post('/', (req, res) => {
+  dBModule.storeProduct(req.body.name, req.body.type, req.body.number)
+
+  res.redirect('/')
+})
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`)
