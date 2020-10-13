@@ -21,13 +21,12 @@ app.get('/jesus', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-  dBModule.storePerson(req.body.name, req.body.email, req.body.age)
 
+  dBModule.storePerson(req.body.name, req.body.email, req.body.age)
   res.redirect('/')
 })
 app.post('/', (req, res) => {
   dBModule.storeProduct(req.body.name, req.body.type, req.body.number)
-
   res.redirect('/')
 })
 
