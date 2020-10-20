@@ -21,8 +21,8 @@ app.post('/', async (req, res) => {
    let Storage = createstorage(req.body.name, req.body.text)
    await dBModule.storeElement(Storage)
 
-  // console.log(req.body.name);
-  // console.log(req.body.text);
+  console.log(req.body.name);
+  console.log(req.body.text);
   res.redirect('/')
 })
 
