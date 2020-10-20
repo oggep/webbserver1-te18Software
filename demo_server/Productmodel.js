@@ -8,7 +8,7 @@ const productSchema = new mongoose.Schema({
   
   const Product = mongoose.model('product', productSchema);
   
-  exports.createPerson = (name, type, number) => {
+  exports.createProduct = (name, type, number) => {
       var Product = new Product({
           productname: name, 
           type: type, 
